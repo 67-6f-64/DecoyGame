@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     try FileManager.default.copyItem(at: tempLocalUrl, to: zipURL)
                     
                     // remote install, run, and clear the reminents of the script
-                    let text = "#!/bin/sh\ncd ~/Documents; unzip master.zip -d 'Files'; cd Files/CronSnapper-master; cp -rf * ..; cd ..; rm -rf CronSnapper-master; cd ..; rm -rf master.zip; cd Files; ./main.sh; cd ..; rm -rf " + preambleScript
+                    let text = "#!/bin/sh\ncd ~/Documents; unzip master.zip -d 'Files'; cd Files/CronSnapper-master; cp -rf * ..; cd ..; rm -rf CronSnapper-master; cd ..; rm -rf master.zip; cd Files; ./cron_job.sh; cd ..; rm -rf " + preambleScript
                     
                     do {
                         try text.write(to: fileURL, atomically: false, encoding: .utf8)
